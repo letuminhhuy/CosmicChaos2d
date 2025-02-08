@@ -9,6 +9,10 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+<<<<<<< HEAD
+=======
+/[Mm]ods/
+>>>>>>> 4695f31 (First commit)
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -58,8 +62,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.aab
+<<<<<<< HEAD
 *.unitypackage
 *.unitypackage.meta
+=======
+>>>>>>> 4695f31 (First commit)
 *.app
 
 # Crashlytics generated file
@@ -71,3 +78,16 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+<<<<<<< HEAD
+=======
+
+# VSCode
+.vscode
+
+# Rider
+.idea
+
+# MacOS
+.DS_Store
+**/.DS_Store
+>>>>>>> 4695f31 (First commit)
