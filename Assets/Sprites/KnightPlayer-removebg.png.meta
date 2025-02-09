@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: a3e5278da38ec9745ab830c17cf59e9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5273236322626612856
+    second: KnightPlayer-removebg_0
+  - first:
+      213: 7184852712858369567
+    second: KnightPlayer-removebg_1
+  - first:
+      213: -9036257901386496123
+    second: KnightPlayer-removebg_2
+  - first:
+      213: -7253577120167212304
+    second: KnightPlayer-removebg_3
+  - first:
+      213: -3290632149014542712
+    second: KnightPlayer-removebg_4
+  - first:
+      213: -8766402755719080234
+    second: KnightPlayer-removebg_5
+  - first:
+      213: 7943202970569047765
+    second: KnightPlayer-removebg_6
+  - first:
+      213: 3864614029176181584
+    second: KnightPlayer-removebg_7
+  - first:
+      213: -279398182848496952
+    second: KnightPlayer-removebg_8
+  - first:
+      213: -1046634297181558471
+    second: KnightPlayer-removebg_9
+  - first:
+      213: -1642170143578875512
+    second: KnightPlayer-removebg_10
+  - first:
+      213: 589304104091653344
+    second: KnightPlayer-removebg_11
+  - first:
+      213: -3288943243992447800
+    second: KnightPlayer-removebg_12
+  - first:
+      213: -2682260551250885480
+    second: KnightPlayer-removebg_13
+  - first:
+      213: 3480296916734412872
+    second: KnightPlayer-removebg_14
+  - first:
+      213: 3956465768507181125
+    second: KnightPlayer-removebg_15
+  - first:
+      213: 9074443673643821945
+    second: KnightPlayer-removebg_16
+  - first:
+      213: 569167847089702385
+    second: KnightPlayer-removebg_17
+  - first:
+      213: 1878431840382873043
+    second: KnightPlayer-removebg_18
+  - first:
+      213: -6989494649026468813
+    second: KnightPlayer-removebg_19
+  - first:
+      213: -1709756006204122081
+    second: KnightPlayer-removebg_20
+  - first:
+      213: -3057081557665584438
+    second: KnightPlayer-removebg_21
+  - first:
+      213: -3737802412685407006
+    second: KnightPlayer-removebg_22
+  - first:
+      213: 9055708005058992861
+    second: KnightPlayer-removebg_23
+  - first:
+      213: -5699586987024105434
+    second: KnightPlayer-removebg_24
+  - first:
+      213: 4852624710442803545
+    second: KnightPlayer-removebg_25
+  - first:
+      213: 3126358694898023203
+    second: KnightPlayer-removebg_26
+  - first:
+      213: -4394711152063673214
+    second: KnightPlayer-removebg_27
+  - first:
+      213: -5066542119314150335
+    second: KnightPlayer-removebg_28
+  - first:
+      213: -2250773626260093955
+    second: KnightPlayer-removebg_29
+  - first:
+      213: -803883065177279871
+    second: KnightPlayer-removebg_30
+  - first:
+      213: 7587076031179124171
+    second: KnightPlayer-removebg_31
+  - first:
+      213: -8706324750362807397
+    second: KnightPlayer-removebg_32
+  - first:
+      213: -3780390283852062229
+    second: KnightPlayer-removebg_33
+  - first:
+      213: 5171313671458964332
+    second: KnightPlayer-removebg_34
+  - first:
+      213: -7056697212657134226
+    second: KnightPlayer-removebg_35
+  - first:
+      213: -5303219368142978499
+    second: KnightPlayer-removebg_36
+  - first:
+      213: -2189760516646758002
+    second: KnightPlayer-removebg_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_0
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 337
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881572dd083b1d6b0800000000000000
+      internalID: -5273236322626612856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 337
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ebc61b979b5b360800000000000000
+      internalID: 7184852712858369567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 337
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5878a099053c89280800000000000000
+      internalID: -9036257901386496123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 337
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa48815a0e165b90800000000000000
+      internalID: -7253577120167212304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_4
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 337
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8860287be735552d0800000000000000
+      internalID: -3290632149014542712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_5
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 337
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d6db5bd32b775680800000000000000
+      internalID: -8766402755719080234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 259
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de789f440deb3e60800000000000000
+      internalID: 7943202970569047765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 259
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0539903ebfdd1a530800000000000000
+      internalID: 3864614029176181584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 258
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cafc6045d06f1cf0800000000000000
+      internalID: -279398182848496952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 258
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939a0cae6ab9971f0800000000000000
+      internalID: -1046634297181558471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_10
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 259
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8899a3b74f6d539e0800000000000000
+      internalID: -1642170143578875512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_11
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 259
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4101dd5f0ad2800800000000000000
+      internalID: 589304104091653344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_12
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 258
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4c86f8b835b52d0800000000000000
+      internalID: -3288943243992447800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_13
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 258
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894c5a76d32b6cad0800000000000000
+      internalID: -2682260551250885480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_14
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 184
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84887da3b9f7c4030800000000000000
+      internalID: 3480296916734412872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_15
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 184
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5480dd977a038e630800000000000000
+      internalID: 3956465768507181125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_16
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 184
+        width: 39
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ba4d55176eeed70800000000000000
+      internalID: 9074443673643821945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_17
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 184
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f50b5f242716e700800000000000000
+      internalID: 569167847089702385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_18
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 184
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddedc47ec7811a10800000000000000
+      internalID: 1878431840382873043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_19
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 184
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334a84d06a3500f90800000000000000
+      internalID: -6989494649026468813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_20
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 184
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1cdc9598f9b548e0800000000000000
+      internalID: -1709756006204122081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_21
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 184
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acae1f935801395d0800000000000000
+      internalID: -3057081557665584438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_22
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 113
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecc9476288a02cc0800000000000000
+      internalID: -3737802412685407006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_23
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 113
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddad33f83765cad70800000000000000
+      internalID: 9055708005058992861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_24
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 115
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6204dff35dff6e0b0800000000000000
+      internalID: -5699586987024105434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_25
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 113
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951e93eb67cf75340800000000000000
+      internalID: 4852624710442803545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_26
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 112
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32bb9d93bae036b20800000000000000
+      internalID: 3126358694898023203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_27
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 112
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c0ccacd79d203c0800000000000000
+      internalID: -4394711152063673214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_28
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 112
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ca9b249c600b9b0800000000000000
+      internalID: -5066542119314150335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_29
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 113
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df303f0ef45a3c0e0800000000000000
+      internalID: -2250773626260093955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_30
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 40
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182f7238c9808d4f0800000000000000
+      internalID: -803883065177279871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 40
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcdef4ac375ba4960800000000000000
+      internalID: 7587076031179124171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_32
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 40
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b93fe6384cbec2780800000000000000
+      internalID: -8706324750362807397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_33
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 40
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1e8a2f01b598bc0800000000000000
+      internalID: -3780390283852062229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_34
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 40
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63ce69a26234c740800000000000000
+      internalID: 5171313671458964332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_35
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 40
+        width: 58
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e651518e543911e90800000000000000
+      internalID: -7056697212657134226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_36
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 52
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32cdd3151e2766b0800000000000000
+      internalID: -5303219368142978499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightPlayer-removebg_37
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 40
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89181679686c91e0800000000000000
+      internalID: -2189760516646758002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c592627d3be83194f8d6ebc508af0154
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KnightPlayer-removebg_0: -5273236322626612856
+      KnightPlayer-removebg_1: 7184852712858369567
+      KnightPlayer-removebg_10: -1642170143578875512
+      KnightPlayer-removebg_11: 589304104091653344
+      KnightPlayer-removebg_12: -3288943243992447800
+      KnightPlayer-removebg_13: -2682260551250885480
+      KnightPlayer-removebg_14: 3480296916734412872
+      KnightPlayer-removebg_15: 3956465768507181125
+      KnightPlayer-removebg_16: 9074443673643821945
+      KnightPlayer-removebg_17: 569167847089702385
+      KnightPlayer-removebg_18: 1878431840382873043
+      KnightPlayer-removebg_19: -6989494649026468813
+      KnightPlayer-removebg_2: -9036257901386496123
+      KnightPlayer-removebg_20: -1709756006204122081
+      KnightPlayer-removebg_21: -3057081557665584438
+      KnightPlayer-removebg_22: -3737802412685407006
+      KnightPlayer-removebg_23: 9055708005058992861
+      KnightPlayer-removebg_24: -5699586987024105434
+      KnightPlayer-removebg_25: 4852624710442803545
+      KnightPlayer-removebg_26: 3126358694898023203
+      KnightPlayer-removebg_27: -4394711152063673214
+      KnightPlayer-removebg_28: -5066542119314150335
+      KnightPlayer-removebg_29: -2250773626260093955
+      KnightPlayer-removebg_3: -7253577120167212304
+      KnightPlayer-removebg_30: -803883065177279871
+      KnightPlayer-removebg_31: 7587076031179124171
+      KnightPlayer-removebg_32: -8706324750362807397
+      KnightPlayer-removebg_33: -3780390283852062229
+      KnightPlayer-removebg_34: 5171313671458964332
+      KnightPlayer-removebg_35: -7056697212657134226
+      KnightPlayer-removebg_36: -5303219368142978499
+      KnightPlayer-removebg_37: -2189760516646758002
+      KnightPlayer-removebg_4: -3290632149014542712
+      KnightPlayer-removebg_5: -8766402755719080234
+      KnightPlayer-removebg_6: 7943202970569047765
+      KnightPlayer-removebg_7: 3864614029176181584
+      KnightPlayer-removebg_8: -279398182848496952
+      KnightPlayer-removebg_9: -1046634297181558471
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
