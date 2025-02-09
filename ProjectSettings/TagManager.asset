@@ -64,5 +64,8 @@ TagManager:
   - name: Player
     uniqueID: 734609063
     locked: 0
+  - name: HpBar
+    uniqueID: 973913789
+    locked: 0
   m_RenderingLayers:
   - Default

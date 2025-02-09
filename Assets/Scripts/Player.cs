@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();   
+        }
     }
     void MovePlayer()
     {
@@ -77,4 +81,11 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    void Attack()
+    {
+        animator.SetTrigger("attack"); 
+    }
+    
+    
 }
