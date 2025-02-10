@@ -130,7 +130,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (player != null)
             {
-                player.TakeDame(enterDamage);
+                player.TakeDamege(enterDamage);
             }
         }
     }
@@ -140,7 +140,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (player != null)
             {
-                player.TakeDame(stayDamage);
+                player.TakeDamege(stayDamage);
             }
         }
     }
