@@ -136106,8 +136106,8 @@ MonoBehaviour:
   runSpeed: 4
   maxHP: 100
   hpBar: {fileID: 1438614396}
-  enterDamage: 10
-  stayDamage: 1
+  enterDamage: 1
+  stayDamage: 0.1
 --- !u!1001 &2140265147
 PrefabInstance:
   m_ObjectHideFlags: 0

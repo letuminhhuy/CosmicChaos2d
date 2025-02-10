@@ -18,8 +18,8 @@ public class EnemyAI : MonoBehaviour
     protected float currentHP;
     [SerializeField] private Image hpBar;
 
-    [SerializeField] protected float enterDamage = 10f;
-    [SerializeField] protected float stayDamage = 1f;
+    [SerializeField] protected float enterDamage = 1f;
+    [SerializeField] protected float stayDamage = 0.1f;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour
         else
             Patrol();
 
-        FlipDirection();
+       
     }
 
     //Di chuyển tuần tra theo hình dấu "+"
@@ -102,26 +102,51 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 direction = (target - transform.position).normalized;
         rb.linearVelocity = direction * speed;
-    }
 
-    void FlipDirection()
-    {
-        if ((rb.linearVelocity.x > 0 && !facingRight) || (rb.linearVelocity.x < 0 && facingRight))
+        // Flip
+        if (!isChasing)
         {
-            facingRight = !facingRight;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            if (direction.x > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (direction.x < 0 && facingRight)
+            {
+                Flip();
+            }
         }
+        else
+        {
+            // Kiểm tra vận tốc để tránh flip liên tục khi player đứng yên
+            float playerDirection = player.transform.position.x - transform.position.x;
+            if (Mathf.Abs(playerDirection) > 0.1f)
+            {
+                if (rb.linearVelocity.x > 0 && !facingRight)
+                {
+                    Flip();
+                }
+                else if (rb.linearVelocity.x < 0 && facingRight)
+                {
+                    Flip();
+                }
+            }
+        }
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     // Tạo 5 điểm di chuyển theo hình dấu "+"
     void GeneratePlusPoints()
     {
-        patrolPoints = new Vector3[5];
+        patrolPoints = new Vector3[3];
         patrolPoints[0] = patrolCenter;                                // Trung tâm
-        patrolPoints[1] = patrolCenter + Vector3.up * patrolRadius;    // Trên
-        patrolPoints[2] = patrolCenter + Vector3.down * patrolRadius;  // Dưới
-        patrolPoints[3] = patrolCenter + Vector3.left * patrolRadius;  // Trái
-        patrolPoints[4] = patrolCenter + Vector3.right * patrolRadius; // Phải
+        patrolPoints[1] = patrolCenter + Vector3.left * patrolRadius;  // Trái
+        patrolPoints[2] = patrolCenter + Vector3.right * patrolRadius; // Phải
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -145,7 +170,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
@@ -167,6 +191,10 @@ public class EnemyAI : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        animator.SetTrigger("isDead");
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject, 2f);
     }
 }
