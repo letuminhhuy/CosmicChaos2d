@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -63,6 +64,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 734609063
+    locked: 0
+  - name: Enemy
+    uniqueID: 650413443
     locked: 0
   - name: HpBar
     uniqueID: 973913789
