@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -14,6 +15,12 @@ public class Player : MonoBehaviour
     private float currentHp;
     [SerializeField]
     private Image hpBar;
+
+
+    private int coinCount = 0; // số coin thu nhập
+    private int maxCoins = 6; // giới hạn
+    [SerializeField] private TMP_Text coinText; // UI hiển thị số coin 
+
 
     private void Awake()
     {
@@ -86,6 +93,29 @@ public class Player : MonoBehaviour
     {
         animator.SetTrigger("attack"); 
     }
-    
-    
+
+
+    // Xử lí va chạm với coin
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            if (coinCount < maxCoins) // Kiểm tra nếu chưa thu thập đủ 6 coin
+            {
+                coinCount++;
+                UpdateCoinText(); // Cập nhật số lượng coin trên UI
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    // Cập nhật UI hiển thị số lượng coin
+    private void UpdateCoinText()
+    {
+        if (coinText != null)
+        {
+            coinText.text = "Coins: " + coinCount + "/" + maxCoins;
+        }
+    }
+
 }
