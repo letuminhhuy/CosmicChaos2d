@@ -102,6 +102,16 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 direction = (target - transform.position).normalized;
         rb.linearVelocity = direction * speed;
+        float distanceToTarget = Vector2.Distance(transform.position, target);
+
+        if (isChasing && distanceToTarget <= 0.5f)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            rb.linearVelocity = direction * speed;
+        }
 
         // Flip
         if (!isChasing)
