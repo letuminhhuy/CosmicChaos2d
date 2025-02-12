@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         MovePlayer();
         if (Input.GetMouseButtonDown(0))
         {
+            animator.SetTrigger("attack");
             Attack();   
         }
     }
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isWalk", true);
         }
-        else
+        else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player1Attack"))
         {
             animator.SetBool("isWalk", false);
         }
@@ -76,7 +77,12 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        Destroy(gameObject);
+        animator.SetBool("isDead", true);
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+
+        Destroy(gameObject ,0.5f);
     }
     protected void UpdateHpBar()
     {
