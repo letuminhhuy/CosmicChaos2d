@@ -44,6 +44,42 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tiny_Water
+    uniqueID: 2749314719
+    locked: 0
+  - name: Tiny_Foam
+    uniqueID: 1763047027
+    locked: 0
+  - name: Tiny_Lend
+    uniqueID: 708632083
+    locked: 0
+  - name: Tiny_Shadow
+    uniqueID: 1815857579
+    locked: 0
+  - name: Tiny_Cliff
+    uniqueID: 615582541
+    locked: 0
+  - name: Tiny_Grass
+    uniqueID: 1359778781
+    locked: 0
+  - name: Tiny_Bridge
+    uniqueID: 3018043341
+    locked: 0
+  - name: Tiny_House
+    uniqueID: 1934135953
+    locked: 0
+  - name: Tiny_Caslte
+    uniqueID: 3640261333
+    locked: 0
+  - name: Tiny_Tower
+    uniqueID: 3332397709
+    locked: 0
+  - name: Tiny_Tree
+    uniqueID: 507289339
+    locked: 0
+  - name: Tiny_bg
+    uniqueID: 2807348589
+    locked: 0
   - name: Gound
     uniqueID: 1446959171
     locked: 0
