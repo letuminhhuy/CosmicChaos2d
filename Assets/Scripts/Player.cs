@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image hpBar;
 
-    public Transform attackPoint;  
+    public Transform attackPoint;
     public float attackRange = 1f;
     public LayerMask enemyLayers;
     public float attackDamage = 25f;
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("attack");
-            Attack();   
+            Attack();
         }
     }
     void MovePlayer()
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
 
-        Destroy(gameObject ,0.5f);
+        Destroy(gameObject, 0.5f);
     }
     protected void UpdateHpBar()
     {
@@ -99,10 +99,10 @@ public class Player : MonoBehaviour
 
         // Kiểm tra va chạm với Enemy
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        Debug.Log("Hit enemies count: " + hitEnemies.Length); 
+        Debug.Log("Hit enemies count: " + hitEnemies.Length);
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Attacking enemy: " + enemy.name); 
+            Debug.Log("Attacking enemy: " + enemy.name);
             enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
         }
     }
