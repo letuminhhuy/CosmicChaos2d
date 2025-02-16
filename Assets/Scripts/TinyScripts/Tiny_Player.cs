@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Tiny_Player : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class Tiny_Player : MonoBehaviour
     public int attackDamage = 10;
     public Transform attackPoint;
     public LayerMask enemyLayer;
+
+    private float currentHp;
+    [SerializeField] private float maxHp = 100f;
+    [SerializeField] private Image hpBar;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -22,7 +27,8 @@ public class Tiny_Player : MonoBehaviour
 
     void Start()
     {
-        
+        currentHp = maxHp;
+        UpdateHpBar();
     }
 
     void Update()
@@ -60,9 +66,8 @@ public class Tiny_Player : MonoBehaviour
         // Get all colliders within the attack range of the attackPoint
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         foreach (Collider2D enemy in hitEnemies)
-        {    
-            //enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
-            Debug.Log("Damage dealt to enemy");
+        {
+            enemy.GetComponent<Tiny_Enemy>().TakeDamage(attackDamage);
         }
     }
 
@@ -72,5 +77,35 @@ public class Tiny_Player : MonoBehaviour
         if (attackPoint == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHp -= damage;
+        currentHp = Mathf.Max(currentHp, 0);
+        UpdateHpBar();
+        if (currentHp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void UpdateHpBar()
+    {
+        if (hpBar != null)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
+        }
+    }
+
+    private void Die()
+    {
+        animator.SetTrigger("isDead");
+
+        rb.linearVelocity = Vector2.zero; rb.simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+
+        float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        Destroy(gameObject, animationLength);
     }
 }
