@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 2495228829
+    locked: 0
   - name: Gound
     uniqueID: 1446959171
     locked: 0
@@ -53,23 +56,20 @@ TagManager:
   - name: ForceGround
     uniqueID: 626616931
     locked: 0
-  - name: BackGround
-    uniqueID: 2495228829
-    locked: 0
   - name: Item
     uniqueID: 1769534375
     locked: 0
   - name: Trap
     uniqueID: 48239395
     locked: 0
-  - name: Player
-    uniqueID: 734609063
+  - name: HpBar
+    uniqueID: 973913789
     locked: 0
   - name: Enemy
     uniqueID: 650413443
     locked: 0
-  - name: HpBar
-    uniqueID: 973913789
+  - name: Player
+    uniqueID: 734609063
     locked: 0
   m_RenderingLayers:
   - Default
