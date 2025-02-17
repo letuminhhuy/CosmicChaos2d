@@ -127972,7 +127972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  maxHp: 20
+  maxHp: 100
   hpBar: {fileID: 237391904}
   attackPoint: {fileID: 102642793}
   attackRange: 1
