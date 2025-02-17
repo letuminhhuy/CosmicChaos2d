@@ -4,9 +4,10 @@ public class Player_map_2_Health : MonoBehaviour
 {
     [SerializeField] private float health = 100f;
     private const float MAX_HEALTH = 100f;
-
+    private GameManager gameManager;
     private void Awake()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     void Update()
@@ -33,6 +34,12 @@ public class Player_map_2_Health : MonoBehaviour
         if (amount < 0) return;
 
         health -= amount;
+
+        if (health <= 0)
+        {
+            health = 0;
+            gameManager.GameOver(); // Hiển thị Game Over UI
+        }
     }
 
     public void Heal(float amount)
