@@ -120,4 +120,12 @@ public class Tiny_Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public void Heal(float healAmount)
+    {
+        currentHp += healAmount;
+        currentHp = Mathf.Min(currentHp, maxHp);
+        UpdateHpBar();
+        Debug.Log("Player healed: " + healAmount);
+    }
 }

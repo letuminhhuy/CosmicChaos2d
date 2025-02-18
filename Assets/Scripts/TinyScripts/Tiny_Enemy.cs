@@ -15,6 +15,8 @@ public class Tiny_Enemy : MonoBehaviour
     [SerializeField] protected float enterDamage = 10f;
     [SerializeField] protected float stayDamage = 1f;
 
+    public GameObject healthItemPrefab;
+
     private Rigidbody2D rb;
 
     void Start()
@@ -81,9 +83,7 @@ public class Tiny_Enemy : MonoBehaviour
         UpdateHPBar();
         if (currentHP <= 0)
         {
-            Debug.Log("Enemy was died.");
-            // Thêm logic xử lý khi kẻ địch chết (vd: hủy đối tượng)
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -93,5 +93,16 @@ public class Tiny_Enemy : MonoBehaviour
         {
             hpBar.fillAmount = currentHP / maxHP;
         }
+    }
+
+    void Die()
+    {
+        DropHealthItem();
+        Destroy(gameObject);
+    }
+
+    void DropHealthItem()
+    {
+        Instantiate(healthItemPrefab, transform.position, Quaternion.identity);
     }
 }
