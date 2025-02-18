@@ -51,9 +51,6 @@ TagManager:
   - name: Wall
     uniqueID: 3136302679
     locked: 0
-  - name: ForceGround
-    uniqueID: 626616931
-    locked: 0
   - name: Item
     uniqueID: 1769534375
     locked: 0
@@ -68,6 +65,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 734609063
+    locked: 0
+  - name: ForceGround
+    uniqueID: 626616931
     locked: 0
   - name: UI
     uniqueID: 1630686263

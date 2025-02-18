@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player_map_2_Health : MonoBehaviour
 {
@@ -38,9 +39,16 @@ public class Player_map_2_Health : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            gameManager.GameOver(); // Hiển thị Game Over UI
+            StartCoroutine(GameOverAfterDelay(2f)); // Đợi 2 giây trước khi hiển thị Game Over
         }
     }
+
+    private IEnumerator GameOverAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Đợi thời gian được chỉ định
+        gameManager.GameOver(); // Hiển thị Game Over UI
+    }
+
 
     public void Heal(float amount)
     {

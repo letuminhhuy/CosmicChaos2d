@@ -28,10 +28,11 @@ public class Player_map_2_Collision : MonoBehaviour
             Destroy(collision.gameObject);
             gameManager.AddScore(100);
         }
-        if (collision.CompareTag("Key"))
+        else if (collision.CompareTag("Key"))
         {
             Destroy(collision.gameObject);
             gameManager.AddKey(1);
         }
     }
+
 }
