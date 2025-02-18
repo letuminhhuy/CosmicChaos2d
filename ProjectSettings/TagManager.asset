@@ -7,6 +7,7 @@ TagManager:
   - Coin
   - Trap
   - Enemy
+  - EnergyStone
   layers:
   - Default
   - TransparentFX
@@ -103,6 +104,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 734609063
+    locked: 0
+  - name: UI
+    uniqueID: 3385464151
     locked: 0
   m_RenderingLayers:
   - Default
