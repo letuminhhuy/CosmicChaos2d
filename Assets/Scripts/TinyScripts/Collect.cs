@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class GameManager : MonoBehaviour
+public class Collect : MonoBehaviour
 {
     private int count = 0;
     [SerializeField] private TextMeshProUGUI stoneText;
@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
         UpdateStone();
     }
 
-    
+
     void Update()
     {
-        
+
     }
 
     public void AddStone(int x)

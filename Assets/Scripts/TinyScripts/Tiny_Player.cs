@@ -18,14 +18,14 @@ public class Tiny_Player : MonoBehaviour
     private SpriteRenderer rbSprite;
     private Animator animator;
     
-    private GameManager gameManager;
+    private Collect collect;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rbSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        gameManager = FindAnyObjectByType<GameManager>();
+        collect = FindAnyObjectByType<Collect>();
     }
 
     void Start()
@@ -116,7 +116,7 @@ public class Tiny_Player : MonoBehaviour
     {
         if (collision.CompareTag("EnergyStone"))
         {
-            gameManager.AddStone(1);
+            collect.AddStone(1);
             Destroy(collision.gameObject);
         }
     }
