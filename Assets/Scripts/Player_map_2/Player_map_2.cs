@@ -7,7 +7,7 @@ public class Player_map_2 : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Reference to sprite renderer
     private Animator animator; // Reference to animator
     private GameObject attackArea = default;
-
+    private GameManager gameManager;
     private float timer = 0f;
 
     private bool attacking = false;
@@ -17,18 +17,24 @@ public class Player_map_2 : MonoBehaviour
     private bool canMove = true; // Controls whether player can move
 
 
+    [System.Obsolete]
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>(); // Reference to Rigidbody
         spriteRenderer = GetComponent<SpriteRenderer>(); // Reference to sprite renderer
         animator = GetComponent<Animator>(); // Reference to animator
+        gameManager = GetComponent<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
         attackArea = transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
-       
 
+        if (gameManager.IsGameOver() || gameManager.IsGameWin())
+        {
+            return;
+        }
         if (canMove)
         {
             MovePlayer();
