@@ -24,7 +24,7 @@ public class Player_map_2 : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // Reference to sprite renderer
         animator = GetComponent<Animator>(); // Reference to animator
         gameManager = GetComponent<GameManager>();
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
         attackArea = transform.GetChild(0).gameObject;
     }
 
