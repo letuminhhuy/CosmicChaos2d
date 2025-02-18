@@ -57,18 +57,20 @@ public class GameManager : MonoBehaviour
     }
     public void AddKey(int keys)
     {
-        if (!isGameOver && !isGameWin)  
-        {
-            key += keys;
-            if (key > totalKeys) key = totalKeys;  
-            UpdateKey();
+        if (isGameOver || isGameWin) return; // Nếu game over hoặc win, không làm gì cả
 
-            if (key == totalKeys)  
-            {
-                GameWin(); 
-            }
+        key += keys; // Cộng thêm số chìa khóa
+        if (key > totalKeys) key = totalKeys; // Giới hạn số chìa khóa tối đa
+
+        UpdateKey(); // Cập nhật UI
+
+        if (key >= totalKeys) // Kiểm tra nếu đã đủ chìa khóa
+        {
+            GameWin(); // Gọi GameWin
         }
     }
+
+
 
     public void GameOver()
     {
