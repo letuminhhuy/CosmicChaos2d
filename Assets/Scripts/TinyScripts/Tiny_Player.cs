@@ -17,12 +17,15 @@ public class Tiny_Player : MonoBehaviour
     private Vector2 movement;
     private SpriteRenderer rbSprite;
     private Animator animator;
+    
+    private GameManager gameManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rbSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     void Start()
@@ -107,5 +110,14 @@ public class Tiny_Player : MonoBehaviour
 
         float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
         Destroy(gameObject, animationLength);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnergyStone"))
+        {
+            gameManager.AddStone(1);
+            Destroy(collision.gameObject);
+        }
     }
 }
