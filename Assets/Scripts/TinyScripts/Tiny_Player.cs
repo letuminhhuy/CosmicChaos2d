@@ -38,7 +38,7 @@ public class Tiny_Player : MonoBehaviour
     {
         HandleMove();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsMoving())
         {
             rb.linearVelocity = Vector2.zero;
             animator.SetTrigger("isAttack");
@@ -108,8 +108,7 @@ public class Tiny_Player : MonoBehaviour
         rb.linearVelocity = Vector2.zero; rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
 
-        float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
-        Destroy(gameObject, animationLength);
+        Destroy(gameObject, 1.4f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -127,5 +126,10 @@ public class Tiny_Player : MonoBehaviour
         currentHp = Mathf.Min(currentHp, maxHp);
         UpdateHpBar();
         Debug.Log("Player healed: " + healAmount);
+    }
+
+    private bool IsMoving()
+    {
+        return movement != Vector2.zero;
     }
 }
