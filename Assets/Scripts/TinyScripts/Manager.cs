@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Manager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject pauseGameMenu;
+    [SerializeField] private GameObject gameWinMenu;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class Manager : MonoBehaviour
         gameOverMenu.SetActive(true);
         mainMenu.SetActive(false);
         pauseGameMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 0f;
     }
@@ -33,14 +36,26 @@ public class Manager : MonoBehaviour
         pauseGameMenu.SetActive(true);
         gameOverMenu.SetActive(false);
         mainMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 0f;
     }
+    public void GameWinMenu()
+    {
+        gameWinMenu.SetActive(true);
+        mainMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        pauseGameMenu.SetActive(false);
+
+        Time.timeScale = 0f;
+    }
+
     public void StartGame()
     {
         mainMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         pauseGameMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 1f;
     }
@@ -49,6 +64,7 @@ public class Manager : MonoBehaviour
         mainMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         pauseGameMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 1f;
     }
