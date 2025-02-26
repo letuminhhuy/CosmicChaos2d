@@ -20,4 +20,8 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void NextPlanet()
+    {
+        SceneManager.LoadScene("Sence_2");
+    }
 }

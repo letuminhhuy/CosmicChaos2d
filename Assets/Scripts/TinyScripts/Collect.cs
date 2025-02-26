@@ -5,6 +5,7 @@ public class Collect : MonoBehaviour
 {
     private int count = 0;
     [SerializeField] private TextMeshProUGUI stoneText;
+    [SerializeField] private Manager gameManager;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class Collect : MonoBehaviour
     {
         count += x;
         UpdateStone();
+        if (count >= 1)
+        {
+            gameManager.GameWinMenu();
+        }
     }
     public void UpdateStone()
     {
