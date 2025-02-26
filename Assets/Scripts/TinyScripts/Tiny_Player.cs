@@ -20,6 +20,8 @@ public class Tiny_Player : MonoBehaviour
     
     private Collect collect;
 
+    [SerializeField] private Manager gameManager;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +45,10 @@ public class Tiny_Player : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             animator.SetTrigger("isAttack");
             HandleAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.PauseGameMenu();
         }
     }
 
@@ -103,12 +109,14 @@ public class Tiny_Player : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("isDead");
+        //animator.SetTrigger("isDead");
 
-        rb.linearVelocity = Vector2.zero; rb.simulated = false;
-        GetComponent<Collider2D>().enabled = false;
+        //rb.linearVelocity = Vector2.zero; rb.simulated = false;
+        //GetComponent<Collider2D>().enabled = false;
 
-        Destroy(gameObject, 1.4f);
+        //Destroy(gameObject, 1.4f);
+
+        gameManager.GameOverMenu();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
