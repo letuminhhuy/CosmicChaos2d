@@ -105,11 +105,15 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3385464151
+    locked: 0
   - name: ForceGround
     uniqueID: 626616931
     locked: 0
   - name: UI
     uniqueID: 1630686263
+    locked: 0
+  - name: Tiny_UI_Menu
+    uniqueID: 3550340771
     locked: 0
   m_RenderingLayers:
   - Default
