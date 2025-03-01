@@ -40,7 +40,7 @@ public class Tiny_Player : MonoBehaviour
     {
         HandleMove();
 
-        if (Input.GetMouseButtonDown(0) && !IsMoving())
+        if (Input.GetMouseButtonDown(0) && !IsMoving() && Time.timeScale != 0f)
         {
             rb.linearVelocity = Vector2.zero;
             animator.SetTrigger("isAttack");
@@ -90,6 +90,8 @@ public class Tiny_Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (Time.timeScale == 0f) return;
+
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
