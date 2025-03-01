@@ -1,55 +1,69 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections;
+using UnityEngine;
 
-public class Tiny_Enemy : MonoBehaviour
+public class Tiny_Enemy : Enemy
 {
     public Tiny_Player player;
     public float walkSpeed = 1f, runSpeed = 4f;
     public float chaseRange = 5f; // Phạm vi đuổi theo
     public float attackRange = 1f; // Phạm vi tấn công
+    public float enterDamage = 10f;
+    public float stayDamage = 1f;
 
-    [SerializeField] float maxHP = 100f;
-    protected float currentHP;
-    [SerializeField] private Image hpBar;
+    private Vector2 startPosition;
+    private bool isReturning = false; // Trạng thái đang quay về vị trí ban đầu
 
-    [SerializeField] protected float enterDamage = 10f;
-    [SerializeField] protected float stayDamage = 1f;
-
-    public GameObject healthItemPrefab;
-
-    private Rigidbody2D rb;
-
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        currentHP = maxHP;
-        UpdateHPBar();
+        base.Start();
+        startPosition = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
-        if (player != null)
+        if (player == null)
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            rb.linearVelocity = Vector2.zero;
+            animator.SetBool("isRun", false);
+            animator.SetBool("isAttack", false);
+            return;
+        }
 
-            // Nếu người chơi trong phạm vi đuổi theo
-            if (distanceToPlayer <= chaseRange)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+
+        // Kiểm tra và lật hướng khi di chuyển
+        if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
+        {
+            Flip();
+        }
+
+        if (distanceToPlayer <= chaseRange && !isReturning) // Nếu Player trong phạm vi đuổi theo và Enemy chưa quay về vị trí gốc
+        {
+            if (distanceToPlayer > attackRange) // Nếu Player ở vùng đuổi nhưng ngoài vùng tấn công
             {
-                // Đuổi theo người chơi
-                Vector2 direction = (player.transform.position - transform.position).normalized;
                 rb.linearVelocity = direction * walkSpeed;
-
-                // Nếu người chơi trong phạm vi tấn công
-                if (distanceToPlayer <= attackRange)
-                {
-                    // Tấn công người chơi
-                    player.TakeDamage(stayDamage);
-                }
+                animator.SetBool("isRun", true);
+                animator.SetBool("isAttack", false);
             }
-            else
+            else // Nếu Player trong vùng tấn công
             {
-                // Dừng di chuyển khi ra khỏi phạm vi đuổi theo
                 rb.linearVelocity = Vector2.zero;
+                animator.SetBool("isRun", false);
+                animator.SetBool("isAttack", true);
+                animator.SetTrigger("WarriorAttack");
+
+                player.TakeDamage(stayDamage);
+            }
+        }
+        else // Nếu Player ra khỏi phạm vi chaseRange HOẶC ra khỏi attackRange khi đang bị tấn công
+        {
+            animator.SetBool("isAttack", false);
+
+            if (!isReturning) // Nếu chưa quay về vị trí ban đầu
+            {
+                isReturning = true;
+                StartCoroutine(ReturnToStartPosition());
             }
         }
     }
@@ -76,33 +90,40 @@ public class Tiny_Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    private IEnumerator ReturnToStartPosition()
     {
-        currentHP -= damage;
-        currentHP = Mathf.Max(currentHP, 0);
-        UpdateHPBar();
-        if (currentHP <= 0)
+        animator.SetBool("isRun", true); // Bật animation chạy khi quay về
+
+        while (Vector2.Distance(transform.position, startPosition) > 0.1f)
         {
-            Die();
-        }
-    }
+            Vector2 direction = (startPosition - (Vector2)transform.position).normalized;
 
-    private void UpdateHPBar()
-    {
-        if (hpBar != null)
+            // Kiểm tra và lật hướng nếu cần khi quay về
+            if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
+            {
+                Flip();
+            }
+
+            rb.linearVelocity = direction * walkSpeed;
+            yield return null;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        animator.SetBool("isRun", false); // Tắt animation chạy khi về đến nơi
+        isReturning = false;
+
+        // không tấn công khi quay về
+        if (Vector2.Distance(transform.position, player.transform.position) > attackRange)
         {
-            hpBar.fillAmount = currentHP / maxHP;
+            animator.SetBool("isAttack", false);
         }
+
+        Flip();
     }
 
-    void Die()
+    protected override void Die()
     {
-        DropHealthItem();
-        Destroy(gameObject);
-    }
-
-    void DropHealthItem()
-    {
-        Instantiate(healthItemPrefab, transform.position, Quaternion.identity);
+        base.Die();
+        Debug.Log("Tiny_Enemy đã chết!");
     }
 }
