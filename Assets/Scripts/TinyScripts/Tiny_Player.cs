@@ -109,13 +109,15 @@ public class Tiny_Player : MonoBehaviour
 
     private void Die()
     {
-        //animator.SetTrigger("isDead");
-
-        //rb.linearVelocity = Vector2.zero; rb.simulated = false;
-        //GetComponent<Collider2D>().enabled = false;
-
+        animator.SetTrigger("isDead");
+        rb.linearVelocity = Vector2.zero; rb.simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("ShowGameOverMenu", 1.4f);
         //Destroy(gameObject, 1.4f);
+    }
 
+    private void ShowGameOverMenu()
+    {
         gameManager.GameOverMenu();
     }
 

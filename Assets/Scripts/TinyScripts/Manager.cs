@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
@@ -11,7 +11,14 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
-        MainMenu();
+        if (SceneManager.GetActiveScene().name == "MainMenuScene")
+        {
+            MainMenu();
+        }
+        else
+        {
+            StartGame();
+        }
     }
 
     public void MainMenu()
@@ -19,9 +26,11 @@ public class Manager : MonoBehaviour
         mainMenu.SetActive(true);
         gameOverMenu.SetActive(false);
         pauseGameMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 0f;
     }
+
     public void GameOverMenu()
     {
         gameOverMenu.SetActive(true);
@@ -31,6 +40,7 @@ public class Manager : MonoBehaviour
 
         Time.timeScale = 0f;
     }
+
     public void PauseGameMenu()
     {
         pauseGameMenu.SetActive(true);
@@ -40,6 +50,7 @@ public class Manager : MonoBehaviour
 
         Time.timeScale = 0f;
     }
+
     public void GameWinMenu()
     {
         gameWinMenu.SetActive(true);
@@ -50,6 +61,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+
     public void StartGame()
     {
         mainMenu.SetActive(false);
@@ -59,6 +71,7 @@ public class Manager : MonoBehaviour
 
         Time.timeScale = 1f;
     }
+
     public void ResumeGame()
     {
         mainMenu.SetActive(false);

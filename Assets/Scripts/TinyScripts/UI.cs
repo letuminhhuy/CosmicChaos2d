@@ -16,7 +16,7 @@ public class UI : MonoBehaviour
     {
         gameManager.ResumeGame();
     }
-    public void MainMenu()
+    public void ReplayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -24,4 +24,20 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("Sence_2");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
+    //method to choose map from menu
+    public void SelectMapTinyMap()
+    {
+        SceneManager.LoadScene("TinyMap");
+    }
+
+    public void SelectMapScene2()
+    {
+        SceneManager.LoadScene("Scene_2");
+    }
+
 }
