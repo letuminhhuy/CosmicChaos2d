@@ -51,7 +51,7 @@ public class Tiny_Enemy : Enemy
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isRun", false);
                 animator.SetBool("isAttack", true);
-                animator.SetTrigger("WarriorAttack");
+                animator.SetTrigger("isAttack");
 
                 player.TakeDamage(stayDamage);
             }
