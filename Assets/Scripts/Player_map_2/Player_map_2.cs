@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player_map_2 : MonoBehaviour
 {
@@ -16,16 +17,21 @@ public class Player_map_2 : MonoBehaviour
 
     private bool canMove = true; // Controls whether player can move
 
-
+    private GameObject healthBar;//Thanh máu
+    private Tilemap groundTilemap; // Thêm tham chiếu đến Tilemap Ground
     [System.Obsolete]
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>(); // Reference to Rigidbody
         spriteRenderer = GetComponent<SpriteRenderer>(); // Reference to sprite renderer
         animator = GetComponent<Animator>(); // Reference to animator
-        gameManager = GetComponent<GameManager>();
+        //gameManager = GetComponent<GameManager>();
         gameManager = FindAnyObjectByType<GameManager>();
-        attackArea = transform.GetChild(0).gameObject;
+        //attackArea = transform.GetChild(0).gameObject;
+        attackArea = transform.Find("AttackArea")?.gameObject;
+        healthBar = transform.Find("HealthBar")?.gameObject;
+        // Tìm Tilemap Ground trong scene
+        groundTilemap = GameObject.Find("Ground").GetComponent<Tilemap>(); // Thay "Ground" bằng tên GameObject của Tilemap Ground
     }
 
     void Update()
@@ -45,12 +51,29 @@ public class Player_map_2 : MonoBehaviour
         }
 
         HandleAttack();
+        ClampPlayerPosition(); // Giới hạn vị trí Player
     }
+    void ClampPlayerPosition()
+    {
+        if (groundTilemap != null)
+        {
+            // Lấy bounds của Tilemap Ground
+            Bounds bounds = groundTilemap.localBounds;
+            Vector3 min = groundTilemap.transform.TransformPoint(bounds.min);
+            Vector3 max = groundTilemap.transform.TransformPoint(bounds.max);
 
+            // Giới hạn vị trí Player trong bounds của Ground
+            Vector3 position = transform.position;
+            position.x = Mathf.Clamp(position.x, min.x, max.x);
+            position.y = Mathf.Clamp(position.y, min.y, max.y);
+            transform.position = position;
+        }
+    }
     void MovePlayer()
     {
         Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        Rigidbody.linearVelocity = playerInput.normalized * moveSpeed; // Updated to use `velocity` instead of `linearVelocity`
+        //Rigidbody.linearVelocity = playerInput.normalized * moveSpeed; // Updated to use `velocity` instead of `linearVelocity`       
+        Rigidbody.linearVelocity = playerInput.normalized * moveSpeed;
         FlipPlayer(playerInput);
         AnimationPlayerRun(playerInput);
     }
@@ -89,6 +112,29 @@ public class Player_map_2 : MonoBehaviour
             }
         }
     }
+    /*void HandleAttack()
+    {
+        if (!attacking)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                StartAttack("Player_IsAttack_1");
+            }
+            else if (Input.GetKeyDown(KeyCode.X))
+            {
+                StartAttack("Player_IsAttack_2");
+            }
+        }
+
+        if (attacking)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeToAttack)
+            {
+                EndAttack();
+            }
+        }
+    }*/
 
     void StartAttack(string attackTrigger)
     {
@@ -97,6 +143,8 @@ public class Player_map_2 : MonoBehaviour
         timer = 0;
         animator.SetTrigger(attackTrigger);
         attackArea.SetActive(true);
+        // Bật trạng thái tấn công khi Player chém
+        attackArea.GetComponent<Player_map_2_AttackArea>().SetAttacking(true);
         Rigidbody.linearVelocity = Vector2.zero; // Stop movement during attack
     }
 
@@ -105,12 +153,15 @@ public class Player_map_2 : MonoBehaviour
         attacking = false;
         canMove = true;
         attackArea.SetActive(false);
+        // Tắt trạng thái tấn công sau khi kết thúc đòn chém
+        attackArea.GetComponent<Player_map_2_AttackArea>().SetAttacking(false);
         ResetAttackTriggers();
     }
 
     void ResetAttackTriggers()
     {
         animator.ResetTrigger("Player_IsAttack_1");
+        animator.ResetTrigger("Player_IsAttack_2");
     }
 
 
