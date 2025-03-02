@@ -57,8 +57,13 @@ public class Player_map_2 : MonoBehaviour
 
     void FlipPlayer(Vector2 player)
     {
-        spriteRenderer.flipX = player.x < 0;
+        // Chỉ thay đổi flipX khi hướng đi thay đổi, tránh bị lặp lại
+        if (player.x != 0)
+        {
+            spriteRenderer.flipX = player.x < 0;
+        }
     }
+
 
     void AnimationPlayerRun(Vector2 player)
     {
@@ -69,13 +74,9 @@ public class Player_map_2 : MonoBehaviour
     {
         if (!attacking)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
             {
                 StartAttack("Player_IsAttack_1");
-            }
-            else if (Input.GetKeyDown(KeyCode.X))
-            {
-                StartAttack("Player_IsAttack_2");
             }
         }
 
@@ -110,7 +111,6 @@ public class Player_map_2 : MonoBehaviour
     void ResetAttackTriggers()
     {
         animator.ResetTrigger("Player_IsAttack_1");
-        animator.ResetTrigger("Player_IsAttack_2");
     }
 
 
