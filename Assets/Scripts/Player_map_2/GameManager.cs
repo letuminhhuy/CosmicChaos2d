@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         isGameOver=false;
         score = 0;
         key = 0;
+        Time.timeScale = 1;
         UpdateScore();
         UpdateKey();
         SceneManager.LoadScene("Sence_2");
