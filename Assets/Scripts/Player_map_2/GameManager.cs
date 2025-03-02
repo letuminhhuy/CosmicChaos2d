@@ -72,13 +72,37 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void GameOver()
+    /*public void GameOver()
     {
         isGameOver = true;
         score = 0;
         key = 0;
         Time.timeScale = 0;
         gameOverUI.SetActive(true); //hien thi panel gameover    
+    }*/
+    public void GameOver()
+    {
+        if (isGameOver) return;
+        isGameOver = true;
+        Time.timeScale = 0;
+
+        // Xử lý Player, Enemy, và Boss
+        string[] tags = { "Player", "Enemy", "Boss" };
+        foreach (string tag in tags)
+        {
+            GameObject[] objects = (tag == "Enemy") ? GameObject.FindGameObjectsWithTag(tag) : new[] { GameObject.FindWithTag(tag) };
+            foreach (GameObject obj in objects)
+            {
+                if (obj != null)
+                {
+                    Transform healthBar = obj.transform.Find("HealthBar");
+                    if (healthBar != null) healthBar.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        // Hiển thị UI Game Over
+        if (gameOverUI != null) gameOverUI.SetActive(true);
     }
 
     public void GameWin()
