@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI keyText;
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
+    [SerializeField] private GameObject pauseGame;
+    [SerializeField] private GameObject pauseButton;
 
     private bool isGameOver = false;
     private bool isGameWin = false;
@@ -20,8 +22,10 @@ public class GameManager : MonoBehaviour
     {
         UpdateScore();
         UpdateKey();
+        pauseButton.SetActive(true); // Bật Pause Button khi game chạy
         gameOverUI.SetActive(false);
         gameWinUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -84,8 +88,9 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver) return;
         isGameOver = true;
+        score = 0;
+        key = 0;
         Time.timeScale = 0;
-
         // Xử lý Player, Enemy, và Boss
         string[] tags = { "Player", "Enemy", "Boss" };
         foreach (string tag in tags)
@@ -100,7 +105,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
+        pauseButton.SetActive(false);
         // Hiển thị UI Game Over
         if (gameOverUI != null) gameOverUI.SetActive(true);
     }
@@ -111,6 +116,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         key = 0;
         Time.timeScale = 0;
+        pauseButton.SetActive(false);
         gameWinUI.SetActive(true);
     }
     public void RestartGame()
@@ -136,7 +142,19 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Menu_Sence");
+        SceneManager.LoadScene("MainMenuScenes");
         Time.timeScale = 1;
+    }
+    public void PauseGame()
+    {
+        pauseGame.SetActive(true);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
+    }
+    public void ResumeGame()
+    {
+        pauseGame.SetActive(false);
+        pauseButton.SetActive(true);
+        Time.timeScale = 1f;
     }
 }
