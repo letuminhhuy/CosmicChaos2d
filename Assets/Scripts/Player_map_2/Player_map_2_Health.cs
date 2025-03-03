@@ -41,7 +41,7 @@ public class Player_map_2_Health : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            StartCoroutine(GameOverAfterDelay(0.5f)); // Đợi 1 giây trước khi hiển thị Game Over
+            StartCoroutine(GameOverAfterDelay(0.2f)); // Đợi 0.2 giây trước khi hiển thị Game Over
         }
     }
 
