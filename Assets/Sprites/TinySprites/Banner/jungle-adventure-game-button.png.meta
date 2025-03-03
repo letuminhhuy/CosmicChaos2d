@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 163afe19ef0fd374cad2dee3d87c55c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5676324033977019202
+    second: jungle-adventure-game-button_0
+  - first:
+      213: -4185304295542572879
+    second: jungle-adventure-game-button_1
+  - first:
+      213: 1373908877932455533
+    second: jungle-adventure-game-button_2
+  - first:
+      213: -4581882849003168037
+    second: jungle-adventure-game-button_3
+  - first:
+      213: 6333794807808196377
+    second: jungle-adventure-game-button_4
+  - first:
+      213: -5096967816787942933
+    second: jungle-adventure-game-button_5
+  - first:
+      213: -7886693475220478931
+    second: jungle-adventure-game-button_6
+  - first:
+      213: 2198352540612060171
+    second: jungle-adventure-game-button_7
+  - first:
+      213: 327635358830583175
+    second: jungle-adventure-game-button_8
+  - first:
+      213: -3496424080336370495
+    second: jungle-adventure-game-button_9
+  - first:
+      213: 1150891275494055018
+    second: jungle-adventure-game-button_10
+  - first:
+      213: -305376373703740884
+    second: jungle-adventure-game-button_11
+  - first:
+      213: -800681100731630800
+    second: jungle-adventure-game-button_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 111
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb499c49d55a931b0800000000000000
+      internalID: -5676324033977019202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 189
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8b44bfaefcae5c0800000000000000
+      internalID: -4185304295542572879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_2
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 185
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d666bee58da111310800000000000000
+      internalID: 1373908877932455533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 190
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde16be13d1e960c0800000000000000
+      internalID: -4581882849003168037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_4
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 17
+        width: 256
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ffe9fd1d826e750800000000000000
+      internalID: 6333794807808196377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_5
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 137
+        width: 111
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1a1c886cee349b0800000000000000
+      internalID: -5096967816787942933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_6
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 137
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24a71dd116dc8290800000000000000
+      internalID: -7886693475220478931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_7
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 137
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0462420dfd128e10800000000000000
+      internalID: 2198352540612060171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 83
+        width: 111
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d54fa7f9efb8400800000000000000
+      internalID: 327635358830583175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_9
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 94
+        width: 143
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4cd63e2d43a7fc0800000000000000
+      internalID: -3496424080336370495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 29
+        width: 111
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c5be27489c8ff00800000000000000
+      internalID: 1150891275494055018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 30
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22779a5ec513cbf0800000000000000
+      internalID: -305376373703740884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jungle-adventure-game-button_12
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 30
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bb584f7c863e4f0800000000000000
+      internalID: -800681100731630800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jungle-adventure-game-button_0: -5676324033977019202
+      jungle-adventure-game-button_1: -4185304295542572879
+      jungle-adventure-game-button_10: 1150891275494055018
+      jungle-adventure-game-button_11: -305376373703740884
+      jungle-adventure-game-button_12: -800681100731630800
+      jungle-adventure-game-button_2: 1373908877932455533
+      jungle-adventure-game-button_3: -4581882849003168037
+      jungle-adventure-game-button_4: 6333794807808196377
+      jungle-adventure-game-button_5: -5096967816787942933
+      jungle-adventure-game-button_6: -7886693475220478931
+      jungle-adventure-game-button_7: 2198352540612060171
+      jungle-adventure-game-button_8: 327635358830583175
+      jungle-adventure-game-button_9: -3496424080336370495
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
