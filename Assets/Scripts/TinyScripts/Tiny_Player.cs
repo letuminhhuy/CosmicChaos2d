@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Tiny_Player : MonoBehaviour
@@ -6,6 +7,8 @@ public class Tiny_Player : MonoBehaviour
     public float moveSpeed = 2f;
     public float attackRange = 1.6f;
     public int attackDamage = 10;
+    private float lastAttackTime = 0f;
+    [SerializeField] private float attackCooldown = 0.5f;
     public Transform attackPoint;
     public LayerMask enemyLayer;
 
@@ -19,7 +22,6 @@ public class Tiny_Player : MonoBehaviour
     private Animator animator;
     
     private Collect collect;
-
     [SerializeField] private Manager gameManager;
 
     private void Awake()
@@ -42,10 +44,17 @@ public class Tiny_Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !IsMoving() && Time.timeScale != 0f)
         {
-            rb.linearVelocity = Vector2.zero;
-            animator.SetTrigger("isAttack");
-            HandleAttack();
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                rb.linearVelocity = Vector2.zero;
+                animator.SetTrigger("isAttack");
+                HandleAttack();
+
+                lastAttackTime = Time.time;
+            }
+            
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameManager.PauseGame();
