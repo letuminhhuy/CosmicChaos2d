@@ -1,78 +1,56 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
-
-    //[SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject gameOverMenu;
-    [SerializeField] private GameObject pauseGameMenu;
-    [SerializeField] private GameObject gameWinMenu;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject pauseGame;
+    [SerializeField] private GameObject gameWin;
+    [SerializeField] private GameObject pauseButton;
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenuScene")
-        {
-            MainMenu();
-        }
-        else
-        {
-            StartGame();
-        }
+        StartGame();
     }
-
-    public void MainMenu()
-    {
-        gameOverMenu.SetActive(false);
-        pauseGameMenu.SetActive(false);
-        gameWinMenu.SetActive(false);
-
-        Time.timeScale = 0f;
-    }
-
-    public void GameOverMenu()
-    {
-        gameOverMenu.SetActive(true);
-        pauseGameMenu.SetActive(false);
-        gameWinMenu.SetActive(false);
-
-        Time.timeScale = 0f;
-    }
-
-    public void PauseGameMenu()
-    {
-        pauseGameMenu.SetActive(true);
-        gameOverMenu.SetActive(false);
-        gameWinMenu.SetActive(false);
-
-        Time.timeScale = 0f;
-    }
-
-    public void GameWinMenu()
-    {
-        gameWinMenu.SetActive(true);
-        gameOverMenu.SetActive(false);
-        pauseGameMenu.SetActive(false);
-
-        Time.timeScale = 0f;
-    }
-
-
     public void StartGame()
     {
-        gameOverMenu.SetActive(false);
-        pauseGameMenu.SetActive(false);
-        gameWinMenu.SetActive(false);
-
+        pauseGame.SetActive(false);
+        gameOver.SetActive(false);
+        gameWin.SetActive(false);
+        pauseButton.SetActive(true);
+        Time.timeScale = 1f;
+    }
+    public void PauseGame()
+    {
+        pauseGame.SetActive(true);
+        gameOver.SetActive(false);
+        gameWin.SetActive(false);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
+    }
+    public void ResumeGame()
+    {
+        gameOver.SetActive(false);
+        pauseGame.SetActive(false);
+        gameWin.SetActive(false);
+        pauseButton.SetActive(true);
         Time.timeScale = 1f;
     }
 
-    public void ResumeGame()
+    public void GameOver()
     {
-        gameOverMenu.SetActive(false);
-        pauseGameMenu.SetActive(false);
-        gameWinMenu.SetActive(false);
+        gameOver.SetActive(true);
+        pauseGame.SetActive(false);
+        gameWin.SetActive(false);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
+    }
 
-        Time.timeScale = 1f;
+    public void GameWin()
+    {
+        gameWin.SetActive(true);
+        gameOver.SetActive(false);
+        pauseGame.SetActive(false);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
     }
 }

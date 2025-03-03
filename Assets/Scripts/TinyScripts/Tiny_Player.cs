@@ -48,7 +48,7 @@ public class Tiny_Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameManager.PauseGameMenu();
+            gameManager.PauseGame();
         }
     }
 
@@ -120,7 +120,7 @@ public class Tiny_Player : MonoBehaviour
 
     private void ShowGameOverMenu()
     {
-        gameManager.GameOverMenu();
+        gameManager.GameOver();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
