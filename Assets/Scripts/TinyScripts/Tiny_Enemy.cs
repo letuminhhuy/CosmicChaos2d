@@ -38,7 +38,7 @@ public class Tiny_Enemy : Enemy
             Flip();
         }
 
-        if (distanceToPlayer <= chaseRange && !isReturning) // Nếu Player trong phạm vi đuổi theo và Enemy chưa quay về vị trí gốc
+        if (distanceToPlayer <= chaseRange && !isReturning) //Player trong phạm vi đuổi theo và Enemy chưa quay về vị trí gốc
         {
             if (distanceToPlayer > attackRange) // Nếu Player ở vùng đuổi nhưng ngoài vùng tấn công
             {
@@ -51,12 +51,12 @@ public class Tiny_Enemy : Enemy
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isRun", false);
                 animator.SetBool("isAttack", true);
-                animator.SetTrigger("isAttack");
+                //animator.SetTrigger("isAttack");
 
                 player.TakeDamage(stayDamage);
             }
         }
-        else // Nếu Player ra khỏi phạm vi chaseRange HOẶC ra khỏi attackRange khi đang bị tấn công
+        else //  Player ra khỏi phạm vi chaseRange, attackRange khi đang bị tấn công
         {
             animator.SetBool("isAttack", false);
 
@@ -65,7 +65,7 @@ public class Tiny_Enemy : Enemy
                 isReturning = true;
                 StartCoroutine(ReturnToStartPosition());
             }
-        }
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
