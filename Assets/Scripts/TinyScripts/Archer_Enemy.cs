@@ -1,16 +1,44 @@
 using UnityEngine;
 
-public class Archer_Enemy : MonoBehaviour
+public class Archer_Enemy : Enemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float chaseRange = 10f;
+    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private float attackCooldown = 1f;
+
+    private float lastAttackTime = 0f;
+    private Transform player;
+
+    protected override void Start()
     {
-        
+        base.Start();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (player == null) return;
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        if (distanceToPlayer <= attackRange)
+        {
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                Attack();
+                lastAttackTime = Time.time;
+            }
+            animator.SetBool("isAttack", true);
+        }
+        else
+        {
+            animator.SetBool("isAttack", false);
+        }
+    }
+
+    private void Attack()
+    {
+        Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
     }
 }
