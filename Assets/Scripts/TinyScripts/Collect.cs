@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class Collect : MonoBehaviour
 {
@@ -19,10 +20,17 @@ public class Collect : MonoBehaviour
         UpdateStone();
         if (count >= 1)
         {
-            gameManager.GameWin();
+            StartCoroutine(DelayGameWin());
+            //gameManager.GameWin();
             UnlockNewLevel();
         }
     }
+    private IEnumerator DelayGameWin()
+    {
+        yield return new WaitForSeconds(1);
+        gameManager.GameWin();
+    }
+
     public void UpdateStone()
     {
         stoneText.text = count.ToString() + "/7";

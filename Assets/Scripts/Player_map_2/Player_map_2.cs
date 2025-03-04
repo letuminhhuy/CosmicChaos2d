@@ -97,7 +97,7 @@ public class Player_map_2 : MonoBehaviour
     {
         if (!attacking)
         {
-            if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 StartAttack("Player_IsAttack_1");
             }
@@ -161,7 +161,6 @@ public class Player_map_2 : MonoBehaviour
     void ResetAttackTriggers()
     {
         animator.ResetTrigger("Player_IsAttack_1");
-        animator.ResetTrigger("Player_IsAttack_2");
     }
 
 

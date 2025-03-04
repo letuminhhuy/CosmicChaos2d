@@ -7,6 +7,8 @@ public class Manager : MonoBehaviour
     [SerializeField] private GameObject gameWin;
     [SerializeField] private GameObject pauseButton;
 
+    [SerializeField] private AudioManager audioManager;
+
     void Start()
     {
         StartGame();
@@ -42,6 +44,8 @@ public class Manager : MonoBehaviour
         pauseGame.SetActive(false);
         gameWin.SetActive(false);
         pauseButton.SetActive(false);
+
+        audioManager.GameOverSound();
         Time.timeScale = 0f;
     }
 
@@ -51,6 +55,8 @@ public class Manager : MonoBehaviour
         gameOver.SetActive(false);
         pauseGame.SetActive(false);
         pauseButton.SetActive(false);
+
+        audioManager.GameWinSound();
         Time.timeScale = 0f;
     }
 }

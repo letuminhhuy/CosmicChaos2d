@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Tiny_Player : MonoBehaviour
@@ -6,6 +7,8 @@ public class Tiny_Player : MonoBehaviour
     public float moveSpeed = 2f;
     public float attackRange = 1.6f;
     public int attackDamage = 10;
+    private float lastAttackTime = 0f;
+    [SerializeField] private float attackCooldown = 0.5f;
     public Transform attackPoint;
     public LayerMask enemyLayer;
 
@@ -13,14 +16,16 @@ public class Tiny_Player : MonoBehaviour
     [SerializeField] private float maxHp = 100f;
     [SerializeField] private Image hpBar;
 
+    private bool isDead = false;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private SpriteRenderer rbSprite;
     private Animator animator;
     
     private Collect collect;
-
     [SerializeField] private Manager gameManager;
+    [SerializeField] private AudioManager audioManager;
 
     private void Awake()
     {
@@ -42,14 +47,28 @@ public class Tiny_Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !IsMoving() && Time.timeScale != 0f)
         {
-            rb.linearVelocity = Vector2.zero;
-            animator.SetTrigger("isAttack");
-            HandleAttack();
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                rb.linearVelocity = Vector2.zero;
+                animator.SetTrigger("isAttack");
+                HandleAttack();
+                audioManager.HitSound();
+
+                lastAttackTime = Time.time;
+            }
+            
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameManager.PauseGame();
         }
+
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    currentHp = 0;
+        //    TakeDamage(currentHp);
+        //}
     }
 
     void HandleMove()
@@ -90,7 +109,7 @@ public class Tiny_Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (Time.timeScale == 0f) return;
+        if (Time.timeScale == 0f || isDead) return;
 
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
@@ -111,11 +130,13 @@ public class Tiny_Player : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
+        audioManager.DeathSound();
         animator.SetTrigger("isDead");
         rb.linearVelocity = Vector2.zero; rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
-        Invoke("ShowGameOverMenu", 1.4f);
-        //Destroy(gameObject, 1.4f);
+
+        Invoke(nameof(ShowGameOverMenu), 1.4f);
     }
 
     private void ShowGameOverMenu()
@@ -128,6 +149,7 @@ public class Tiny_Player : MonoBehaviour
         if (collision.CompareTag("EnergyStone"))
         {
             collect.AddStone(1);
+            audioManager.CollectSound();
             Destroy(collision.gameObject);
         }
     }
