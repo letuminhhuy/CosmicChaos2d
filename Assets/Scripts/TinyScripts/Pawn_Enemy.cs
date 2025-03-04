@@ -11,7 +11,7 @@ public class Pawn_Enemy : Enemy
     public float stayDamage = 0.0f;
     public GameObject enemyPrefab;
     public float spawnDelay = 3.0f;
-    private int enemiesToSpawn = 5;
+    //private int enemiesToSpawn = 5;
 
     private Vector2 startPosition;
     private bool isReturning = false;
