@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Tiny_Enemy : Enemy
+public class Pawn_Enemy : Enemy
 {
     public Tiny_Player player;
-    public float walkSpeed = 1f/*, runSpeed = 4f*/;
-    public float chaseRange = 5f; // Phạm vi đuổi theo
-    public float attackRange = 1f; // Phạm vi tấn công
-    public float enterDamage = 1f;
-    public float stayDamage = 0.1f;
+    public float walkSpeed = 0.5f, runSpeed = 2f;
+    public float chaseRange = 2.5f;
+    public float attackRange = 0.5f;
+    public float enterDamage = 0.5f;
+    public float stayDamage = 0.0f;
+    public GameObject enemyPrefab;
+    public float spawnDelay = 3.0f;
+    private int enemiesToSpawn = 5;
 
     private Vector2 startPosition;
-    private bool isReturning = false; // Trạng thái đang quay về vị trí ban đầu
+    private bool isReturning = false;
 
     protected override void Start()
     {
@@ -32,35 +35,32 @@ public class Tiny_Enemy : Enemy
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
-        // Kiểm tra và lật hướng khi di chuyển
         if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
         {
             Flip();
         }
 
-        if (distanceToPlayer <= chaseRange && !isReturning) // Nếu Player trong phạm vi đuổi theo và Enemy chưa quay về vị trí gốc
+        if (distanceToPlayer <= chaseRange && !isReturning)
         {
-            if (distanceToPlayer > attackRange) // Nếu Player ở vùng đuổi nhưng ngoài vùng tấn công
+            if (distanceToPlayer > attackRange)
             {
                 rb.linearVelocity = direction * walkSpeed;
                 animator.SetBool("isRun", true);
                 animator.SetBool("isAttack", false);
             }
-            else // Nếu Player trong vùng tấn công
+            else
             {
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isRun", false);
                 animator.SetBool("isAttack", true);
                 animator.SetTrigger("isAttack");
-
                 player.TakeDamage(stayDamage);
             }
         }
-        else // Nếu Player ra khỏi phạm vi chaseRange HOẶC ra khỏi attackRange khi đang bị tấn công
+        else
         {
             animator.SetBool("isAttack", false);
-
-            if (!isReturning) // Nếu chưa quay về vị trí ban đầu
+            if (!isReturning)
             {
                 isReturning = true;
                 StartCoroutine(ReturnToStartPosition());
@@ -74,7 +74,9 @@ public class Tiny_Enemy : Enemy
         {
             if (player != null)
             {
+                Debug.Log("Pawn bị tấn công");
                 player.TakeDamage(enterDamage);
+                TakeDamage(enterDamage);
             }
         }
     }
@@ -85,44 +87,44 @@ public class Tiny_Enemy : Enemy
         {
             if (player != null)
             {
+                Debug.Log("Pawn bị tấn công");
+
                 player.TakeDamage(stayDamage);
+                TakeDamage(stayDamage);
             }
         }
     }
 
     private IEnumerator ReturnToStartPosition()
     {
-        animator.SetBool("isRun", true); 
+        animator.SetBool("isRun", true);
 
         while (Vector2.Distance(transform.position, startPosition) > 0.1f)
         {
             Vector2 direction = (startPosition - (Vector2)transform.position).normalized;
-
-            // Kiểm tra và lật hướng nếu cần khi quay về
             if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
             {
                 Flip();
             }
-
             rb.linearVelocity = direction * walkSpeed;
             yield return null;
         }
 
         rb.linearVelocity = Vector2.zero;
-        animator.SetBool("isRun", false); 
+        animator.SetBool("isRun", false);
         isReturning = false;
-
-        if (Vector2.Distance(transform.position, player.transform.position) > attackRange)
-        {
-            animator.SetBool("isAttack", false);
-        }
-
+        animator.SetBool("isAttack", false);
         Flip();
     }
 
     protected override void Die()
     {
         base.Die();
-        Debug.Log("Tiny_Enemy đã chết!");
+        Debug.Log("Pawn_Enemy đã chết!");
+        Pawn_EnemySpawn spawner = FindObjectOfType<Pawn_EnemySpawn>();
+        if (spawner != null)
+        {
+            spawner.StartSpawning(startPosition);
+        }
     }
 }
