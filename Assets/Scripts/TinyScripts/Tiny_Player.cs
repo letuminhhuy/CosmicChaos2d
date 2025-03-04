@@ -16,6 +16,8 @@ public class Tiny_Player : MonoBehaviour
     [SerializeField] private float maxHp = 100f;
     [SerializeField] private Image hpBar;
 
+    private bool isDead = false;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private SpriteRenderer rbSprite;
@@ -23,6 +25,7 @@ public class Tiny_Player : MonoBehaviour
     
     private Collect collect;
     [SerializeField] private Manager gameManager;
+    [SerializeField] private AudioManager audioManager;
 
     private void Awake()
     {
@@ -49,6 +52,7 @@ public class Tiny_Player : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
                 animator.SetTrigger("isAttack");
                 HandleAttack();
+                audioManager.HitSound();
 
                 lastAttackTime = Time.time;
             }
@@ -59,6 +63,12 @@ public class Tiny_Player : MonoBehaviour
         {
             gameManager.PauseGame();
         }
+
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    currentHp = 0;
+        //    TakeDamage(currentHp);
+        //}
     }
 
     void HandleMove()
@@ -99,7 +109,7 @@ public class Tiny_Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (Time.timeScale == 0f) return;
+        if (Time.timeScale == 0f || isDead) return;
 
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
@@ -120,11 +130,13 @@ public class Tiny_Player : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
+        audioManager.DeathSound();
         animator.SetTrigger("isDead");
         rb.linearVelocity = Vector2.zero; rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
-        Invoke("ShowGameOverMenu", 1.4f);
-        //Destroy(gameObject, 1.4f);
+
+        Invoke(nameof(ShowGameOverMenu), 1.4f);
     }
 
     private void ShowGameOverMenu()
@@ -137,6 +149,7 @@ public class Tiny_Player : MonoBehaviour
         if (collision.CompareTag("EnergyStone"))
         {
             collect.AddStone(1);
+            audioManager.CollectSound();
             Destroy(collision.gameObject);
         }
     }

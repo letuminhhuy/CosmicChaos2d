@@ -16,6 +16,9 @@ public class LevelMenu : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+        //PlayerPrefs.SetInt("UnlockedLevel", 1);
+        //PlayerPrefs.SetInt("ReachedIndex", 1);
+        //PlayerPrefs.Save();
     }
 
     public void OpenLevel(string mapName)
