@@ -4,11 +4,11 @@ using UnityEngine;
 public class Tiny_Enemy : Enemy
 {
     public Tiny_Player player;
-    public float walkSpeed = 1f, runSpeed = 4f;
+    public float walkSpeed = 1f/*, runSpeed = 4f*/;
     public float chaseRange = 5f; // Phạm vi đuổi theo
     public float attackRange = 1f; // Phạm vi tấn công
-    public float enterDamage = 10f;
-    public float stayDamage = 1f;
+    public float enterDamage = 1f;
+    public float stayDamage = 0.1f;
 
     private Vector2 startPosition;
     private bool isReturning = false; // Trạng thái đang quay về vị trí ban đầu
@@ -51,7 +51,7 @@ public class Tiny_Enemy : Enemy
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isRun", false);
                 animator.SetBool("isAttack", true);
-                animator.SetTrigger("WarriorAttack");
+                animator.SetTrigger("isAttack");
 
                 player.TakeDamage(stayDamage);
             }
@@ -92,7 +92,7 @@ public class Tiny_Enemy : Enemy
 
     private IEnumerator ReturnToStartPosition()
     {
-        animator.SetBool("isRun", true); // Bật animation chạy khi quay về
+        animator.SetBool("isRun", true); 
 
         while (Vector2.Distance(transform.position, startPosition) > 0.1f)
         {
@@ -109,10 +109,9 @@ public class Tiny_Enemy : Enemy
         }
 
         rb.linearVelocity = Vector2.zero;
-        animator.SetBool("isRun", false); // Tắt animation chạy khi về đến nơi
+        animator.SetBool("isRun", false); 
         isReturning = false;
 
-        // không tấn công khi quay về
         if (Vector2.Distance(transform.position, player.transform.position) > attackRange)
         {
             animator.SetBool("isAttack", false);

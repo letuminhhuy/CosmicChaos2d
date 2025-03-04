@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI keyText;
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
+    [SerializeField] private GameObject pauseGame;
+    [SerializeField] private GameObject pauseButton;
 
     private bool isGameOver = false;
     private bool isGameWin = false;
@@ -20,8 +22,10 @@ public class GameManager : MonoBehaviour
     {
         UpdateScore();
         UpdateKey();
+        pauseButton.SetActive(true); // Bật Pause Button khi game chạy
         gameOverUI.SetActive(false);
         gameWinUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -72,13 +76,38 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void GameOver()
+    /*public void GameOver()
     {
         isGameOver = true;
         score = 0;
         key = 0;
         Time.timeScale = 0;
         gameOverUI.SetActive(true); //hien thi panel gameover    
+    }*/
+    public void GameOver()
+    {
+        if (isGameOver) return;
+        isGameOver = true;
+        score = 0;
+        key = 0;
+        Time.timeScale = 0;
+        // Xử lý Player, Enemy, và Boss
+        string[] tags = { "Player", "Enemy", "Boss" };
+        foreach (string tag in tags)
+        {
+            GameObject[] objects = (tag == "Enemy") ? GameObject.FindGameObjectsWithTag(tag) : new[] { GameObject.FindWithTag(tag) };
+            foreach (GameObject obj in objects)
+            {
+                if (obj != null)
+                {
+                    Transform healthBar = obj.transform.Find("HealthBar");
+                    if (healthBar != null) healthBar.gameObject.SetActive(false);
+                }
+            }
+        }
+        pauseButton.SetActive(false);
+        // Hiển thị UI Game Over
+        if (gameOverUI != null) gameOverUI.SetActive(true);
     }
 
     public void GameWin()
@@ -87,6 +116,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         key = 0;
         Time.timeScale = 0;
+        pauseButton.SetActive(false);
         gameWinUI.SetActive(true);
     }
     public void RestartGame()
@@ -94,6 +124,7 @@ public class GameManager : MonoBehaviour
         isGameOver=false;
         score = 0;
         key = 0;
+        Time.timeScale = 1;
         UpdateScore();
         UpdateKey();
         SceneManager.LoadScene("Sence_2");
@@ -111,7 +142,19 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Menu_Sence");
+        SceneManager.LoadScene("MainMenuScenes");
         Time.timeScale = 1;
+    }
+    public void PauseGame()
+    {
+        pauseGame.SetActive(true);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
+    }
+    public void ResumeGame()
+    {
+        pauseGame.SetActive(false);
+        pauseButton.SetActive(true);
+        Time.timeScale = 1f;
     }
 }
