@@ -3,7 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource m_AudioSource;
-    [SerializeField] private AudioSource gamePlayAudioSource;
+    [SerializeField] private AudioSource defaultAudioSource;
     [SerializeField] private AudioClip hiting;
     [SerializeField] private AudioClip death;
     [SerializeField] private AudioClip collect;
@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public void gamePlayAudio()
     {
-        gamePlayAudioSource.Play();
+        defaultAudioSource.Play();
     }
 
     public void HitSound()
@@ -25,17 +25,17 @@ public class AudioManager : MonoBehaviour
     }
     public void DeathSound()
     {
-        gamePlayAudioSource.Stop();
+        defaultAudioSource.Stop();
         m_AudioSource.PlayOneShot(death);
     }
     public void GameWinSound()
     {
-        gamePlayAudioSource.Stop();
+        defaultAudioSource.Stop();
         m_AudioSource.PlayOneShot(gameWin);
     }
     public void GameOverSound()
     {
-        gamePlayAudioSource.Stop();
+        defaultAudioSource.Stop();
         m_AudioSource.PlayOneShot(gameOver);
     }
 }
