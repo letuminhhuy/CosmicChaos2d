@@ -74,6 +74,7 @@ public class Tiny_Enemy : Enemy
         {
             if (player != null)
             {
+                Debug.Log("va cham");
                 player.TakeDamage(enterDamage);
             }
         }
@@ -85,6 +86,7 @@ public class Tiny_Enemy : Enemy
         {
             if (player != null)
             {
+                Debug.Log("va cham");
                 player.TakeDamage(stayDamage);
             }
         }
