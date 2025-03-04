@@ -11,6 +11,7 @@ TagManager:
   - Key
   - HealthBar
   - Boss
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -116,6 +117,9 @@ TagManager:
     locked: 0
   - name: Tiny_UI_Menu
     uniqueID: 3550340771
+    locked: 0
+  - name: Arrow
+    uniqueID: 1897784689
     locked: 0
   m_RenderingLayers:
   - Default
