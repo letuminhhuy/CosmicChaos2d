@@ -7,6 +7,10 @@ public class Player_map_2_Health : MonoBehaviour
     private const float MAX_HEALTH = 100f;
     private GameManager gameManager;
     [SerializeField] private Transform healthBarFill;
+
+    public delegate void PlayerHealthChanged(float currentHealth);
+    public event PlayerHealthChanged OnHealthChanged;
+
     private void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -37,11 +41,12 @@ public class Player_map_2_Health : MonoBehaviour
 
         health -= amount;
         UpdateHealthBar();
+        OnHealthChanged?.Invoke(health); // Gọi event khi máu thay đổi
 
         if (health <= 0)
         {
             health = 0;
-            StartCoroutine(GameOverAfterDelay(0.2f)); // Đợi 0.2 giây trước khi hiển thị Game Over
+            StartCoroutine(GameOverAfterDelay(0.3f)); // Đợi 0.3 giây trước khi hiển thị Game Over
         }
     }
 
@@ -58,6 +63,8 @@ public class Player_map_2_Health : MonoBehaviour
 
         health = Mathf.Min(health + amount, MAX_HEALTH);
         UpdateHealthBar(); // Cập nhật thanh máu
+
+        OnHealthChanged?.Invoke(health); // Gọi event khi máu thay đổi
     }
 
     public float GetHealth()

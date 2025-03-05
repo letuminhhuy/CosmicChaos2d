@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ab799174c9660214ea8eec675471ece2
+guid: 35fa0ab1a09eef34bb0067bcb479cc32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8452333488610634688
-    second: Knight_03__IDLE_000_0
+      213: -1580189189695484825
+    second: Golem_Death_FX_0
+  - first:
+      213: 3674762531785777822
+    second: Golem_Death_FX_1
+  - first:
+      213: 3179060614592266033
+    second: Golem_Death_FX_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_03__IDLE_000_0
+      name: Golem_Death_FX_0
       rect:
         serializedVersion: 2
-        x: 754
-        y: 317
-        width: 569
-        height: 483
+        x: 17
+        y: 15
+        width: 28
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0449938797743ba80800000000000000
-      internalID: -8452333488610634688
+      spriteID: 76cc94edd4a021ae0800000000000000
+      internalID: -1580189189695484825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Death_FX_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 79
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92a10d8d016ff230800000000000000
+      internalID: 3674762531785777822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Death_FX_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 15
+        width: 31
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ff43c19ca4e1c20800000000000000
+      internalID: 3179060614592266033
       vertices: []
       indices: 
       edges: []
@@ -147,8 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Knight_03__IDLE_000_0: -8452333488610634688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

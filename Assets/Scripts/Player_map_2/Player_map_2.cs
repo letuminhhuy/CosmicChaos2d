@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
 public class Player_map_2 : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f; // Speed of player 
+
+    [SerializeField] private AudioClip slashSound; // Âm thanh chém
+    private AudioSource audioSource;
+
     private Rigidbody2D Rigidbody; // Physics of player
     private SpriteRenderer spriteRenderer; // Reference to sprite renderer
     private Animator animator; // Reference to animator
@@ -19,6 +25,8 @@ public class Player_map_2 : MonoBehaviour
 
     private GameObject healthBar;//Thanh máu
     private Tilemap groundTilemap; // Thêm tham chiếu đến Tilemap Ground
+
+
     [System.Obsolete]
     private void Awake()
     {
@@ -32,6 +40,8 @@ public class Player_map_2 : MonoBehaviour
         healthBar = transform.Find("HealthBar")?.gameObject;
         // Tìm Tilemap Ground trong scene
         groundTilemap = GameObject.Find("Ground").GetComponent<Tilemap>(); // Thay "Ground" bằng tên GameObject của Tilemap Ground
+        // Âm thanh
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,8 +53,7 @@ public class Player_map_2 : MonoBehaviour
         }
         if (canMove)
         {
-            MovePlayer();
-        }
+            MovePlayer();        }
         else
         {
             Rigidbody.linearVelocity = Vector2.zero; // Stop movement during attacks or when dead
@@ -146,8 +155,18 @@ public class Player_map_2 : MonoBehaviour
         // Bật trạng thái tấn công khi Player chém
         attackArea.GetComponent<Player_map_2_AttackArea>().SetAttacking(true);
         Rigidbody.linearVelocity = Vector2.zero; // Stop movement during attack
+
+        // Phát âm thanh chém
+        PlaySound(slashSound);
     }
 
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+    }
     void EndAttack()
     {
         attacking = false;
@@ -156,11 +175,22 @@ public class Player_map_2 : MonoBehaviour
         // Tắt trạng thái tấn công sau khi kết thúc đòn chém
         attackArea.GetComponent<Player_map_2_AttackArea>().SetAttacking(false);
         ResetAttackTriggers();
+
+       
     }
 
     void ResetAttackTriggers()
     {
         animator.ResetTrigger("Player_IsAttack_1");
+    }
+
+    public bool IsMoving()
+    {
+        return Rigidbody.linearVelocity.magnitude > 0;
+    }
+    public bool IsFacingLeft()
+    {
+        return spriteRenderer.flipX;
     }
 
 

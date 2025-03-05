@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     private bool isGameOver = false;
     private bool isGameWin = false;
 
+    [SerializeField] private AudioClip gameWinSound; // Âm thanh thắng
+    [SerializeField] private AudioClip gameOverSound; // Âm thanh thua
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -108,6 +116,9 @@ public class GameManager : MonoBehaviour
         pauseButton.SetActive(false);
         // Hiển thị UI Game Over
         if (gameOverUI != null) gameOverUI.SetActive(true);
+
+        // Phát âm thanh Game Over
+        PlaySound(gameOverSound);
     }
 
     public void GameWin()
@@ -118,6 +129,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         pauseButton.SetActive(false);
         gameWinUI.SetActive(true);
+
+        // Phát âm thanh Game Win
+        PlaySound(gameWinSound);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
     public void RestartGame()
     {
