@@ -118,5 +118,6 @@ public class Enemy_1 : MonoBehaviour
         animator.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false; // Vô hiệu hóa va chạm
         this.enabled = false; // Tắt script Enemy_1
+        //Destroy(gameObject);
     }
 }

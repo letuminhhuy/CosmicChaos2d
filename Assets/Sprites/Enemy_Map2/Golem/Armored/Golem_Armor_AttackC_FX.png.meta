@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ab799174c9660214ea8eec675471ece2
+guid: 9ed0be3d83ba1d44a9e84b2b2396875f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8452333488610634688
-    second: Knight_03__IDLE_000_0
+      213: -204667208538979991
+    second: Golem_Armor_AttackC_FX_0
+  - first:
+      213: -3593445130594484907
+    second: Golem_Armor_AttackC_FX_1
+  - first:
+      213: 8579023722439395652
+    second: Golem_Armor_AttackC_FX_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_03__IDLE_000_0
+      name: Golem_Armor_AttackC_FX_0
       rect:
         serializedVersion: 2
-        x: 754
-        y: 317
-        width: 569
-        height: 483
+        x: 21
+        y: 94
+        width: 22
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0449938797743ba80800000000000000
-      internalID: -8452333488610634688
+      spriteID: 9610dd91240e82df0800000000000000
+      internalID: -204667208538979991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Armor_AttackC_FX_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 94
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dfe0f41b4812ec0800000000000000
+      internalID: -3593445130594484907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Armor_AttackC_FX_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 30
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44946a73f90de0770800000000000000
+      internalID: 8579023722439395652
       vertices: []
       indices: 
       edges: []
@@ -147,8 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Knight_03__IDLE_000_0: -8452333488610634688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -32,6 +32,11 @@ public class Boss : MonoBehaviour
             startPosition + Vector3.right * patrolDistance,
             startPosition + Vector3.down * patrolDistance
         };
+        gameObject.SetActive(false);
+    }
+    public void Appear() // Hàm này được gọi khi Player vào vùng kích hoạt
+    {
+        gameObject.SetActive(true);
     }
 
     void Update()

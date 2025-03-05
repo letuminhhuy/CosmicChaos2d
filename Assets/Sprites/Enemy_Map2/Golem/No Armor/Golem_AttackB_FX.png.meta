@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: ab799174c9660214ea8eec675471ece2
+guid: d2dbbf1e6b34cd14897b58bc270cab39
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8452333488610634688
-    second: Knight_03__IDLE_000_0
+      213: -6881066510924886425
+    second: Golem_AttackB_FX_0
+  - first:
+      213: -858018147349100474
+    second: Golem_AttackB_FX_1
+  - first:
+      213: -5164581666004311258
+    second: Golem_AttackB_FX_2
+  - first:
+      213: -5020085042576019684
+    second: Golem_AttackB_FX_3
+  - first:
+      213: -7144308883981701996
+    second: Golem_AttackB_FX_4
+  - first:
+      213: -1919166927138673184
+    second: Golem_AttackB_FX_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_03__IDLE_000_0
+      name: Golem_AttackB_FX_0
       rect:
         serializedVersion: 2
-        x: 754
-        y: 317
-        width: 569
-        height: 483
+        x: 30
+        y: 84
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +143,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0449938797743ba80800000000000000
-      internalID: -8452333488610634688
+      spriteID: 76e4c7c377a8180a0800000000000000
+      internalID: -6881066510924886425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_AttackB_FX_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 83
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6480b6c7a05b714f0800000000000000
+      internalID: -858018147349100474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_AttackB_FX_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 9
+        width: 41
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62361508658b358b0800000000000000
+      internalID: -5164581666004311258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_AttackB_FX_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 11
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f21075043155ab0800000000000000
+      internalID: -5020085042576019684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_AttackB_FX_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c6a941ce05adc90800000000000000
+      internalID: -7144308883981701996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_AttackB_FX_5
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 10
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eda83319dfbd55e0800000000000000
+      internalID: -1919166927138673184
       vertices: []
       indices: 
       edges: []
@@ -147,8 +272,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Knight_03__IDLE_000_0: -8452333488610634688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
