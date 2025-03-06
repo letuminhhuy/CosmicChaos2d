@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float maxHP = 100f;
+    [SerializeField] protected float maxHP = 50f;
     protected float currentHP;
 
     //[SerializeField] protected float moveSpeed = 2f;
