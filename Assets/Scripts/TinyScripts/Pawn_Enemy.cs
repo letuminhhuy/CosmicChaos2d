@@ -9,17 +9,12 @@ public class Pawn_Enemy : Enemy
     public float attackRange = 0.5f;
     public float enterDamage = 0.5f;
     public float stayDamage = 0.0f;
-    public GameObject enemyPrefab;
     public float spawnDelay = 3.0f;
-    //private int enemiesToSpawn = 5;
-
-    private Vector2 startPosition;
-    private bool isReturning = false;
 
     protected override void Start()
     {
         base.Start();
-        startPosition = transform.position;
+        player = FindObjectOfType<Tiny_Player>();
     }
 
     private void Update()
@@ -40,13 +35,11 @@ public class Pawn_Enemy : Enemy
             Flip();
         }
 
-        if (distanceToPlayer <= chaseRange && !isReturning)
+        if (distanceToPlayer <= chaseRange)
         {
             if (distanceToPlayer > attackRange)
             {
-                rb.linearVelocity = direction * walkSpeed;
-                animator.SetBool("isRun", true);
-                animator.SetBool("isAttack", false);
+                MoveToPlayer(direction);
             }
             else
             {
@@ -60,12 +53,14 @@ public class Pawn_Enemy : Enemy
         else
         {
             animator.SetBool("isAttack", false);
-            if (!isReturning)
-            {
-                isReturning = true;
-                StartCoroutine(ReturnToStartPosition());
-            }
+            MoveToPlayer(direction);
         }
+    }
+
+    private void MoveToPlayer(Vector2 direction)
+    {
+        rb.linearVelocity = direction * walkSpeed;
+        animator.SetBool("isRun", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,43 +83,15 @@ public class Pawn_Enemy : Enemy
             if (player != null)
             {
                 Debug.Log("Pawn bị tấn công");
-
                 player.TakeDamage(stayDamage);
                 TakeDamage(stayDamage);
             }
         }
     }
 
-    private IEnumerator ReturnToStartPosition()
-    {
-        animator.SetBool("isRun", true);
-
-        while (Vector2.Distance(transform.position, startPosition) > 0.1f)
-        {
-            Vector2 direction = (startPosition - (Vector2)transform.position).normalized;
-            if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
-            {
-                Flip();
-            }
-            rb.linearVelocity = direction * walkSpeed;
-            yield return null;
-        }
-
-        rb.linearVelocity = Vector2.zero;
-        animator.SetBool("isRun", false);
-        isReturning = false;
-        animator.SetBool("isAttack", false);
-        Flip();
-    }
-
     protected override void Die()
     {
         base.Die();
         Debug.Log("Pawn_Enemy đã chết!");
-        Pawn_EnemySpawn spawner = FindObjectOfType<Pawn_EnemySpawn>();
-        if (spawner != null)
-        {
-            spawner.StartSpawning(startPosition);
-        }
     }
 }

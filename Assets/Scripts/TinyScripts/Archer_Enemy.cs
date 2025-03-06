@@ -39,6 +39,8 @@ public class Archer_Enemy : Enemy
 
     private void Attack()
     {
-        Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+        Vector2 direction = (player.position - firePoint.position).normalized;
+        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+        arrow.transform.right = direction;
     }
 }

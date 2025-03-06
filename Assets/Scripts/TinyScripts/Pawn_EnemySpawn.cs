@@ -3,32 +3,32 @@ using UnityEngine;
 
 public class Pawn_EnemySpawn : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public float spawnDelay = 3.0f;
-    private int enemiesToSpawn = 5;
-    private Vector2 spawnPosition;
+    [SerializeField]
+    private GameObject[] enemies;
+    [SerializeField]
+    private Transform[] spawnPoints;
+    [SerializeField]
+    private float timeSpawn = 3f;
 
-    public void StartSpawning(Vector2 position)
+    [SerializeField]
+    private int maxEnemies = 10;
+    private int currentEnemies = 0;
+
+    void Start()
     {
-        spawnPosition = position;
-        StartCoroutine(SpawnEnemiesCoroutine());
+        StartCoroutine(SwanEnemies());
     }
 
-    private IEnumerator SpawnEnemiesCoroutine()
+    private IEnumerator SwanEnemies()
     {
-        for (int i = 0; i < enemiesToSpawn; i++)
+        while (currentEnemies < maxEnemies)
         {
-            if (enemyPrefab != null)
-            {
-                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                Debug.Log("Enemy spawned. Remaining: " + (enemiesToSpawn - i - 1));
-            }
-            else
-            {
-                Debug.LogError("enemyPrefab is null!");
-            }
-            yield return new WaitForSeconds(spawnDelay);
+            yield return new WaitForSeconds(timeSpawn);
+            GameObject enemy = enemies[Random.Range(0, enemies.Length)];
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+            currentEnemies++;
         }
-        Debug.Log("Finished spawning enemies.");
     }
+
 }

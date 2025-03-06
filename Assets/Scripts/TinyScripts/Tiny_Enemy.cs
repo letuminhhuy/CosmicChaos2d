@@ -4,18 +4,21 @@ using UnityEngine;
 public class Tiny_Enemy : Enemy
 {
     public Tiny_Player player;
-    public float walkSpeed = 1f/*, runSpeed = 4f*/;
-    public float chaseRange = 5f; // Phạm vi đuổi theo
-    public float attackRange = 1f; // Phạm vi tấn công
+    public float walkSpeed = 1f;
+    public float chaseRange = 5f;
+    public float attackRange = 1f; 
     public float enterDamage = 1f;
     public float stayDamage = 0.1f;
 
     private Vector2 startPosition;
     private bool isReturning = false; // Trạng thái đang quay về vị trí ban đầu
 
+    public GameObject healItem;
+
     protected override void Start()
     {
         base.Start();
+        player = FindObjectOfType<Tiny_Player>();
         startPosition = transform.position;
     }
 
@@ -38,15 +41,15 @@ public class Tiny_Enemy : Enemy
             Flip();
         }
 
-        if (distanceToPlayer <= chaseRange && !isReturning) //Player trong phạm vi đuổi theo và Enemy chưa quay về vị trí gốc
+        if (distanceToPlayer <= chaseRange && !isReturning)
         {
-            if (distanceToPlayer > attackRange) // Nếu Player ở vùng đuổi nhưng ngoài vùng tấn công
+            if (distanceToPlayer > attackRange) 
             {
                 rb.linearVelocity = direction * walkSpeed;
                 animator.SetBool("isRun", true);
                 animator.SetBool("isAttack", false);
             }
-            else // Nếu Player trong vùng tấn công
+            else 
             {
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isRun", false);
@@ -56,7 +59,7 @@ public class Tiny_Enemy : Enemy
                 player.TakeDamage(stayDamage);
             }
         }
-        else //  Player ra khỏi phạm vi chaseRange, attackRange khi đang bị tấn công
+        else 
         {
             animator.SetBool("isAttack", false);
 
@@ -126,5 +129,10 @@ public class Tiny_Enemy : Enemy
     {
         base.Die();
         Debug.Log("Tiny_Enemy đã chết!");
+        if (healItem != null & Random.value <0.5f)
+        {
+            Instantiate(healItem, transform.position, Quaternion.identity);
+        }
+        
     }
 }
