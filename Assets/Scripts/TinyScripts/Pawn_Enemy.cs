@@ -59,12 +59,14 @@ public class Pawn_Enemy : Enemy
 
     private void MoveToPlayer(Vector2 direction)
     {
+        Vector2 newPosition = rb.position + direction * walkSpeed * Time.fixedDeltaTime;
         rb.linearVelocity = direction * walkSpeed;
         animator.SetBool("isRun", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Enemy va chạm với: " + collision.gameObject.name);
         if (collision.CompareTag("Player"))
         {
             if (player != null)

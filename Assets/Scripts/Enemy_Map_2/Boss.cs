@@ -98,7 +98,7 @@ public class Boss : MonoBehaviour
             isAttacking = true;
             animator.SetBool("isAttacking", true);
             lastAttackTime = Time.time; // Lưu thời gian tấn công
-            player.GetComponent<Player_map_2_Health>().Damage(15);
+            player.GetComponent<Player_map_2_Health>().Damage(20);
         }
     }
 

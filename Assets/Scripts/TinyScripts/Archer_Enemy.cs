@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Archer_Enemy : Enemy
 {
-    [SerializeField] private float chaseRange = 10f;
+    //[SerializeField] private float chaseRange = 10f;
     [SerializeField] private float attackRange = 5f;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject arrowPrefab;

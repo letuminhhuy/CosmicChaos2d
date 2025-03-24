@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
@@ -18,7 +18,7 @@ public class Collect : MonoBehaviour
     {
         count += x;
         UpdateStone();
-        if (count >= 1)
+        if (count >= 3)
         {
             StartCoroutine(DelayGameWin());
             //gameManager.GameWin();
@@ -33,7 +33,7 @@ public class Collect : MonoBehaviour
 
     public void UpdateStone()
     {
-        stoneText.text = count.ToString() + "/7";
+        stoneText.text = count.ToString() + "/3";
     }
 
     void UnlockNewLevel()
