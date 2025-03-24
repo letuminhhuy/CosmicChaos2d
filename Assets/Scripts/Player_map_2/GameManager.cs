@@ -129,6 +129,20 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         pauseButton.SetActive(false);
         gameWinUI.SetActive(true);
+        // Xử lý Player, Enemy, và Boss
+        string[] tags = { "Player", "Enemy", "Boss" };
+        foreach (string tag in tags)
+        {
+            GameObject[] objects = (tag == "Enemy") ? GameObject.FindGameObjectsWithTag(tag) : new[] { GameObject.FindWithTag(tag) };
+            foreach (GameObject obj in objects)
+            {
+                if (obj != null)
+                {
+                    Transform healthBar = obj.transform.Find("HealthBar");
+                    if (healthBar != null) healthBar.gameObject.SetActive(false);
+                }
+            }
+        }
 
         // Phát âm thanh Game Win
         PlaySound(gameWinSound);
@@ -172,6 +186,20 @@ public class GameManager : MonoBehaviour
         pauseGame.SetActive(true);
         pauseButton.SetActive(false);
         Time.timeScale = 0f;
+        // Xử lý Player, Enemy, và Boss
+        string[] tags = { "Player", "Enemy", "Boss" };
+        foreach (string tag in tags)
+        {
+            GameObject[] objects = (tag == "Enemy") ? GameObject.FindGameObjectsWithTag(tag) : new[] { GameObject.FindWithTag(tag) };
+            foreach (GameObject obj in objects)
+            {
+                if (obj != null)
+                {
+                    Transform healthBar = obj.transform.Find("HealthBar");
+                    if (healthBar != null) healthBar.gameObject.SetActive(false);
+                }
+            }
+        }
     }
     public void ResumeGame()
     {

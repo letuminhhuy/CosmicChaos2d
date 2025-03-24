@@ -209,7 +209,6 @@ MonoBehaviour:
   attackRange: 0.5
   enterDamage: 1
   stayDamage: 0.25
-  enemyPrefab: {fileID: 0}
   spawnDelay: 3
 --- !u!1001 &3174735972719969385
 PrefabInstance:

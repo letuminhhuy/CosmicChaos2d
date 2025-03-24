@@ -8,7 +8,7 @@ public class Tiny_Enemy : Enemy
     public float chaseRange = 5f;
     public float attackRange = 1f; 
     public float enterDamage = 1f;
-    public float stayDamage = 0.1f;
+    public float stayDamage = 0f;
 
     private Vector2 startPosition;
     private bool isReturning = false; // Trạng thái đang quay về vị trí ban đầu
@@ -45,6 +45,7 @@ public class Tiny_Enemy : Enemy
         {
             if (distanceToPlayer > attackRange) 
             {
+                Vector2 newPosition = rb.position + direction * walkSpeed * Time.fixedDeltaTime;
                 rb.linearVelocity = direction * walkSpeed;
                 animator.SetBool("isRun", true);
                 animator.SetBool("isAttack", false);
@@ -109,6 +110,7 @@ public class Tiny_Enemy : Enemy
                 Flip();
             }
 
+            Vector2 newPosition = rb.position + direction * walkSpeed * Time.fixedDeltaTime;
             rb.linearVelocity = direction * walkSpeed;
             yield return null;
         }
